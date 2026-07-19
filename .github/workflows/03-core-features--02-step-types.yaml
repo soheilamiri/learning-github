@@ -4,18 +4,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  say-hello-inline-bash:
+  say-hello-inline-bash-soheil:
     runs-on: ubuntu-24.04
     steps:
       - run: echo "Hello from an inline bash script in a GitHub Action Workflow!"
 
-  say-hello-inline-python:
+  say-hello-inline-python-milad:
     runs-on: ubuntu-24.04
     steps:
       - run: print("Hello from an inline python script in a GitHub Action Workflow!")
         shell: python
 
-  say-hello-action:
+  say-hello-action-zohre:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/hello-world-javascript-action@081a6d193d1dcb38460df1e6927486d748730f9d # v1.1
