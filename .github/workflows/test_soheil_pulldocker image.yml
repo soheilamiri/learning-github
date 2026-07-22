@@ -1,6 +1,6 @@
 # .github/workflows/demo.yml
 
-name: CI
+name: soheil_test_githubaction
 
 # Controls when the workflow will run
 on:
