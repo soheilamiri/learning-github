@@ -10,7 +10,6 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Run Nginx container
-        run: docker stop vibrant_joliot nginx-test
+        run: docker run -d --name nginx-test -p 8080:80 nginx
 
-      - name: remove dokcer 
-        run: docker rm vibrant_joliot nginx-test
+    
