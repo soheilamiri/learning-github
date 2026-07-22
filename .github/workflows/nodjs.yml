@@ -10,4 +10,4 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Run Nginx container
-        run: docker run nginx
+        run: sudo docker run nginx
