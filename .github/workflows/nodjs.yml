@@ -1,5 +1,5 @@
 # .github/workflows/run-nginx.yml
-name: Run my custome command on remote host
+name: Run Nginx Container
 
 on:
   push:
@@ -9,7 +9,5 @@ jobs:
   run-docker:
     runs-on: self-hosted
     steps:
-      - name: Remove old container if exists
-        run: sudo docker rm -f nginx-test || true
       - name: Run Nginx container
-        run: sudo docker run -d --name nginx-test -p 8080:80 nginx
+        run: docker run -d --name nginx-pip -p 8080:80 nginx
