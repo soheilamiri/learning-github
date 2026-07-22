@@ -9,5 +9,7 @@ jobs:
   run-docker:
     runs-on: self-hosted
     steps:
-      - name: Run Command
-        run: sudo docker run nginx
+      - name: Remove old container if exists
+        run: sudo docker rm -f nginx-test festive_dewdney|| true
+      - name: Run Nginx container
+        run: sudo docker run -d --name nginx-test -p 8080:80 nginx
