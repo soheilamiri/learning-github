@@ -1,5 +1,5 @@
 # .github/workflows/run-nginx.yml
-name: Run Nginx Container
+name: Run my custome command on remote host
 
 on:
   push:
@@ -9,5 +9,5 @@ jobs:
   run-docker:
     runs-on: self-hosted
     steps:
-      - name: Run Nginx container
-        run: docker run nginx
+      - name: Run Command
+        run: mkdir /home/sysadmin/runer_1
