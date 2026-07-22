@@ -9,7 +9,9 @@ jobs:
   run-docker:
     runs-on: self-hosted
     steps:
-      - name: Run Nginx container
-        run: docker run -d --name nginx-test -p 8080:80 nginx
+      - name: chekout repository
+        uses: actions/checkout@v4
+    #   - name: Run Nginx container
+    #     run: docker run -d --name nginx-test -p 8080:80 nginx
 
     
