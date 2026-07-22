@@ -1,21 +1,13 @@
-# .github/workflows/nodejs.yml
-
-name: Setup Node.js Env
+# .github/workflows/run-nginx.yml
+name: Run Nginx Container
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  run-docker:
+    runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version:  21
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - name: Run Nginx container
+        run: docker run nginx
