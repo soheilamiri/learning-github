@@ -10,4 +10,4 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Run Nginx container
-        run: docker run -d --name nginx-pip -p 8080:80 nginx
+        run: docker run nginx
