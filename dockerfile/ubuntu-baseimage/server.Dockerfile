@@ -16,7 +16,7 @@ RUN mkdir -p /etc/ssl/certs && \
 RUN rm -f /etc/apt/sources.list.d/ubuntu.sources || true
 
 # add internal repo
-COPY 101-cloud.list /etc/apt/sources.list.d/101-cloud.list
+COPY dockerfile/ubuntu-baseimage/101-cloud.list /etc/apt/sources.list.d/101-cloud.list
 
 # now apt can connect to your internal repo
 RUN apt-get update
