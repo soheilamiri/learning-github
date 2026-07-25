@@ -6,26 +6,28 @@ FROM repo.abris.cloud/ubuntu:resolute-20260707
 ENV DEBIAN_FRONTEND=noninteractive
 
 # copy internal CA certificates
-COPY dockerfile/ubuntu-baseimage/*.crt /tmp/certs/
+COPY *.crt /tmp/certs/
 
 # bootstrap ssl trust store manually
 #RUN mkdir -p /etc/ssl/certs && \
-COPY dockerfile/ubuntu-baseimage/*.crt /usr/local/share/ca-certificates/
+COPY *.crt /usr/local/share/ca-certificates/
 
 
 # remove default ubuntu repos (since you can't reach them)
 RUN rm -f /etc/apt/sources.list.d/ubuntu.sources || true
 
 # add internal repo
-COPY dockerfile/ubuntu-baseimage/101-cloud.list /etc/apt/sources.list.d/101-cloud.list
+COPY 101-cloud.list /etc/apt/sources.list.d/101-cloud.list
 
-# now apt can connect to your internal repo
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends ca-certificates && \
+RUN apt-get -o Acquire::https::Verify-Peer=false \
+            -o Acquire::https::Verify-Host=false \
+            update && \
+    apt-get -o Acquire::https::Verify-Peer=false \
+            install -y --no-install-recommends ca-certificates && \
     update-ca-certificates
+# now apt can connect to your internal repo
 # install packages from internal repo
-RUN apt-get update \
-&& apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
 ca-certificates \
 vim \
 curl \
