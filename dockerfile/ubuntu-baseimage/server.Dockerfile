@@ -20,8 +20,9 @@ RUN rm -f /etc/apt/sources.list.d/ubuntu.sources || true
 COPY dockerfile/ubuntu-baseimage/101-cloud.list /etc/apt/sources.list.d/101-cloud.list
 
 # now apt can connect to your internal repo
-RUN apt-get update
-
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ca-certificates && \
+    update-ca-certificates
 # install packages from internal repo
 RUN apt-get update \
 && apt-get install -y --no-install-recommends \
