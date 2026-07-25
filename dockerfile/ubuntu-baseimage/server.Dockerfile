@@ -28,7 +28,6 @@ RUN apt-get -o Acquire::https::Verify-Peer=false \
 # now apt can connect to your internal repo
 # install packages from internal repo
 RUN apt-get install -y --no-install-recommends \
-ca-certificates \
 vim \
 curl \
 wget \
