@@ -9,8 +9,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 COPY dockerfile/ubuntu-baseimage/*.crt /tmp/certs/
 
 # bootstrap ssl trust store manually
-RUN mkdir -p /etc/ssl/certs && \
-    cat /tmp/certs/*.crt > /etc/ssl/certs/ca-certificates.crt
+#RUN mkdir -p /etc/ssl/certs && \
+COPY dockerfile/ubuntu-baseimage/*.crt /usr/local/share/ca-certificates/
+
 
 # remove default ubuntu repos (since you can't reach them)
 RUN rm -f /etc/apt/sources.list.d/ubuntu.sources || true
