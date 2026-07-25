@@ -6,7 +6,7 @@ FROM repo.abris.cloud/ubuntu:resolute-20260707
 ENV DEBIAN_FRONTEND=noninteractive
 
 # copy internal CA certificates
-COPY *.crt /tmp/certs/
+COPY dockerfile/ubuntu-baseimage/*.crt /tmp/certs/
 
 # bootstrap ssl trust store manually
 RUN mkdir -p /etc/ssl/certs && \
