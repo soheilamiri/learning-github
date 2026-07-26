@@ -10,7 +10,7 @@ jobs:
     runs-on: VM-prod-1
     steps:
       - uses: actions/checkout@v4
-      - name: Build Docker image
+      #- name: Build Docker image
       #   run: docker build -t ubuntu:front-end-V0.1 --file dockerfile/ubuntu-baseimage/server.Dockerfile dockerfile/ubuntu-baseimage/
 
       # - name: Clean up dangling images
