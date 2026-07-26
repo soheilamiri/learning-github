@@ -11,7 +11,7 @@ jobs:
       matrix:
         runner: [prod, test]
 
-    runs-on: [self-hosted, ${{ matrix.runner }}]
+    runs-on: [self-hosted, "${{ matrix.runner }}"]
 
     steps:
       - uses: actions/checkout@v4
