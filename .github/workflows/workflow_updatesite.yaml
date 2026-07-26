@@ -6,9 +6,17 @@ on:
     branches: ["main"]
 
 jobs:
-  run-docker:
+  Forent-End_Service_and_data:
+    strategy:
+      matrix:
+        runner: [prod, test]
+
     runs-on:
-      group: Default
+      - self-hosted
+      - Linux
+      - X64
+      - ${{ matrix.runner }}
+      
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image
