@@ -7,7 +7,10 @@ on:
 
 jobs:
   run-docker:
-    runs-on: self-hosted
+    strategy:
+      matrix:
+        runner: [soheil-pc-WSL, VM-prod-1]
+    runs-on: [self-hosted, "${{ matrix.runner }}"]  
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image
