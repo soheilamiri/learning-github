@@ -9,7 +9,7 @@ jobs:
   run-docker:
     strategy:
       matrix:
-        runner: [soheil-pc-WSL, VM-prod-1]
+        runner: [vm-wsl, VM-prod]
     runs-on: [self-hosted, "${{ matrix.runner }}"]  
     steps:
       - uses: actions/checkout@v4
