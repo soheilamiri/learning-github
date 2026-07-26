@@ -13,10 +13,8 @@ jobs:
 
     runs-on:
       - self-hosted
-      - Linux
-      - X64
       - ${{ matrix.runner }}
-      
+
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image
