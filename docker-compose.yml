@@ -6,4 +6,4 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /opt/nginx-data/html:/usr/share/nginx/html:ro
+      - /opt/nginx-data/html:/var/www/html:ro
