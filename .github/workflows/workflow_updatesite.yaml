@@ -7,10 +7,7 @@ on:
 
 jobs:
   run-docker:
-    strategy:
-      matrix:
-        runner: [vm-wsl, VM-prod]
-    runs-on: [self-hosted, "${{ matrix.runner }}"]  
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image
