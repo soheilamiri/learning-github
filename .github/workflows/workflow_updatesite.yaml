@@ -7,7 +7,7 @@ on:
 
 jobs:
   run-docker:
-    runs-on: [ self-hosted, prod, test]
+    runs-on: [self-hosted, prod, test]
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image
