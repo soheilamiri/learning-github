@@ -1,0 +1,23 @@
+# .github/workflows/run-nginx.yml
+name: Run Nginx Container
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  run-docker:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+      #   run: docker build -t ubuntu:front-end-V0.1 --file dockerfile/ubuntu-baseimage/server.Dockerfile dockerfile/ubuntu-baseimage/
+
+      # - name: Clean up dangling images
+      #   run: docker image prune -f 
+
+      # - name: Create data folder
+      #   run: sudo mkdir -p /opt/nginx-data/html
+
+      # - name: Copy data to persistent location
+      #   run: sudo cp -r web-data/html/* /opt/nginx-data/html/

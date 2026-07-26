@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: ubuntu:front-end-V0.1
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - /opt/nginx-data/html:/usr/share/nginx/html:ro
