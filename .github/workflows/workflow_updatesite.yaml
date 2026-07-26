@@ -8,7 +8,7 @@ on:
 jobs:
   run-docker:
     runs-on:
-      group: Defualt
+      group: Default
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image
