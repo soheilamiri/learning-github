@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - run: echo "Hello from an inline bash script in a GitHub Action Workflow!" \
-             ip -br a
+      - run: ip -br address show
         shell: bash
   say-hello-inline-pwsh:
     runs-on: ubuntu-26.04
