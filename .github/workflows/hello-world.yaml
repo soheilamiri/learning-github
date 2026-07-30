@@ -13,3 +13,8 @@ jobs:
     steps:
       - run: Write-Host "hello works" -ForegroundColor green
         shell: pwsh
+  say-hello-inline-python:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: print("Hello from an inline Python script in a GitHub Action Workflow!")
+        shell: python
