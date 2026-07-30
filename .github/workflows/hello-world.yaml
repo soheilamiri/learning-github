@@ -8,3 +8,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - run: echo "Hello from an inline bash script in a GitHub Action Workflow!"
+  say-hello-inline-pwsh:
+    runs-on: ubuntu-26.04
+      - run: pwsh;  Write-Host "hello works" -ForegroundColor green
