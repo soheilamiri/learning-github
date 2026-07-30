@@ -11,4 +11,5 @@ jobs:
   say-hello-inline-pwsh:
     runs-on: ubuntu-24.04
     steps:
-      - run: pwsh;  Write-Host "hello works" -ForegroundColor green
+      - run: Write-Host "hello works" -ForegroundColor green
+        shell: pwsh
