@@ -2,8 +2,9 @@
 name: Run Nginx Container
 
 on:
-  push:
-    branches: ["main"]
+  workflow_dispatch:
+  # push:
+  #   branches: ["main"]
 
 jobs:
   Forent-End_Service_and_data:
