@@ -7,13 +7,14 @@ jobs:
   say-hello-inline-bash:
     runs-on: ubuntu-24.04
     steps:
-      - run: echo "Hello from an inline bash script in a GitHub Action Workflow!" \
-      - run: ip -br address show
+      - run: | 
+          echo "Hello from an inline bash script in a GitHub Action Workflow!" \
+          ip -br address show
         shell: bash
   say-hello-inline-pwsh:
     runs-on: ubuntu-26.04
     steps:
-      - run: Write-Host "hello works" -ForegroundColor green
+      - run: get-date 
         shell: pwsh
   say-hello-inline-python:
     runs-on: ubuntu-22.04
