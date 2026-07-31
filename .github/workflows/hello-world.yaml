@@ -4,20 +4,31 @@ on:
   workflow_dispatch:
 
 jobs:
-  say-hello-inline-bash:
+  job1:
     runs-on: ubuntu-24.04
     steps:
       - run: | 
           echo "Hello from an inline bash script in a GitHub Action Workflow!" \
           ip -br address show
         shell: bash
-  say-hello-inline-pwsh:
+  job2:
     runs-on: ubuntu-26.04
     steps:
       - run: get-date 
         shell: pwsh
-  say-hello-inline-python:
+  job3:
     runs-on: ubuntu-22.04
+    needs:
+      - job1
+      - job2
     steps:
       - run: print("Hello from an inline Python script in a GitHub Action Workflow!")
         shell: python
+  job4:
+    runs-on: : ubuntu-26.04
+    needs:
+      - job3
+    steps:
+      - run: ping 4.2.2.4 -c
+        shell: pwsh
+      
