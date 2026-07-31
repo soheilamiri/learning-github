@@ -25,7 +25,7 @@ jobs:
       - run: print("Hello from an inline Python script in a GitHub Action Workflow!")
         shell: python
   job4:
-    runs-on: : ubuntu-26.04
+    runs-on: ubuntu-26.04
     needs:
       - job3
     steps:
