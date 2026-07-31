@@ -30,4 +30,11 @@ jobs:
     steps:
       - run: ping 4.2.2.4 -c 5
         shell: pwsh
+  job5:
+    runs-on: ubuntu-26.04
+    needs:
+      - job1
+    steps:
+      - run: hostnamectl hostname
+        shell: pwsh
       
